@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+html{
+    margin:0;
+    padding: 0;
+}
+
+body {
+    background-color:rgb(32, 33, 36);
+    margin: 0;
+    padding: 0;
+    font-family: "Ubuntu", sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+}
+.p_cont{
+    margin: 60px;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    position: relative; /* Make sure the positioning context is set for the pseudo-element */
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 3%;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/bg1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center calc(35% - 2px); 
+    opacity: 0.05;
+    z-index: -1; /* Ensure the pseudo-element is rendered below other elements */
+}
+
+
+.text-header{
+    margin-left: 2em;
+    width: auto;
+    align-content: flex-start;
+    color: rgb(232, 232, 232);
+    font-family: "Poppins", sans-serif;
+}
+.side_nav{
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+}
+.h1-pm{
+    color: rgb(232, 232, 232);
+    text-align: start;
+    padding-left: 1.5rem;
+}
+
+
+form#form {
+    border: 1px solid rgb(36, 40, 50);
+    border-radius: 2rem;
+    background-color: rgb(49, 49, 49);
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto; 
+    display: inline-flex;
+    align-items: center;
+    height: 3.2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  
+  input#search {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    width: 100%;
+    height: 100%;
+  }
+
+  #search::placeholder{
+    color:  rgba(255, 255, 255, 0.3);
+  }
+  
+  
+  button.button-inside{
+    margin-right: 0.4rem;
+    /* Just a little styling to make it pretty */
+    background-color:inherit;
+    background-position: center;
+    background-image: url(images/loupe.png);
+    background-repeat: no-repeat;
+    background-size: 50%;
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 50px;
+    border: none;
+    opacity: .6;
+  }
+
+  .button-inside:hover{
+    filter: brightness(50%);
+}
+
+.popular-movies{
+    background-color:rgb(119, 154, 236) ;
+
+}.genre-selection {
+    flex-direction: column; /* Change to column layout */
+    background-color: rgb(36, 98, 77);
+    display: flex;
+    width: 100%;
+    height: 500px;
+    align-items: center;
+    justify-content: flex-start; 
+    padding-top: 40px;/* Align items at the top */
+}
+
+.genres {
+    display: flex;
+    width: 70%;
+    flex-wrap: wrap;
+}
+.title{
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 20px;
+}
+
+form#select-genre {
+    width: 100%;
+    display: flex;
+    flex-direction: row; /* Align children in a column */
+    align-items:center;
+    align-content: center;
+    justify-content: space-evenly;/* Align items at the top */
+}
+
+.movies-container, .popular-movies {
+    display: flex;
+    flex-direction: column; /* Align children in a column */
+    align-items: center;
+    justify-content: flex-start; /* Align items at the top */
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.i-s-style {
+    color: rgb(203, 203, 65);
+    background-color: transparent;
+    border: 1px solid rgb(203, 203, 65);
+    width: 4.3rem;
+    height: 2rem;
+    border-radius: 20px;
+    margin-bottom: 10px; /* Add some bottom margin to separate the button from the next element */
+}
+
+.i-s-style:hover {
+    color: black;
+    background-color: rgb(203, 203, 65);
+}
+
+.i-s-style:active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.movie-card {
+    background-color: aquamarine;
+    height: 250px;
+    width: 160px;
+    margin: 3rem;
+}

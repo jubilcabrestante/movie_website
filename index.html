@@ -9,60 +9,77 @@
 </head>
 <body>
 <div class="p_cont">
-    <div class="container">
         <div class="header">
-        <div class="text-header"><h1>JC Movie Search</h1></div>
-        <div class="side_nav">        
-            <form class="user-form" id="form">
-                <input type="text" id="search" placeholder="Search for upcoming movies">
-                <button class="button-inside"></button>
-            </form>
+            <div class="text-header"><h1>JC Movie Search</h1></div>
+            <div class="side_nav">        
+                <form class="user-form" id="form">
+                    <input type="text" id="search" placeholder="Search for upcoming movies">
+                    <button class="button-inside"></button>
+                </form>
+            </div>
         </div>
-    </div>
     <div class="h1-pm">
-        <h1>Popular Movies</h1>
+        <h1 class="title">Popular Movies</h1>
     </div>
     <div class="popular-movies">
         <div class="movie-card">
             <div class="img-div">
-                <a href="url-of-an-image"></a>
+                <a href="" id="movie-info"><img src="images/doctor-who.jpg" alt=""></a>
             </div>
-            <div class="details">
-                <div class="rating">
-
-                </div>
+            <div class="movie-info-container">
+                <h2 class="f-s-mi" id="movie-title">Doctor Who</h2>
+                <span class="date-release f-s-mi" id="date"> December 12, 2024</span>
+                <span class="genre f-s-mi">Comedy - Scifi</span>
+            </div>
+        </div>
+        <div class="movie-card">
+            <div class="img-div">
+                <a href="" id="movie-info"><img src="images/doctor-who.jpg" alt=""></a>
+            </div>
+            <div class="movie-info-container">
+                <h2 class="f-s-mi" id="movie-title">Doctor Who</h2>
+                <span class="date-release f-s-mi" id="date"> December 12, 2024</span>
+                <span class="genre f-s-mi">Comedy - Scifi</span>
             </div>
         </div>
     </div>
-    <div class="genre-selection">
-        <div class="title">Select your Favourite Genre:</div>
-        <div class="genres">
-            <form action="post" id="select-genre">
-                <input type="submit" class="i-s-style" value="Action" id="action">
-                <input type="submit" class="i-s-style" value="Horror" id="horror">
-                <input type="submit" class="i-s-style" value="Comedy" id="comedy">
-                <input type="submit" class="i-s-style" value="Drama" id="drama">
-                <input type="submit" class="i-s-style" value="Fantasy" id="fantasy">
-            </form>
+    <div class="p-selection">
+        <div class="genre-selection">
+            <div class="title">Select your Favourite Genre:</div>
+            <div class="genres">
+                <form action="post" id="select-genre">
+                    <input type="submit" class="i-s-style active" value="Action" id="action">
+                    <input type="submit" class="i-s-style" value="Horror" id="horror">
+                    <input type="submit" class="i-s-style" value="Comedy" id="comedy">
+                    <input type="submit" class="i-s-style" value="Drama" id="drama">
+                    <input type="submit" class="i-s-style" value="Fantasy" id="fantasy">
+                </form>
+            </div>
         </div>
-        <div class="movies-container">
+        <div class="selected-genre-movies">
             <div class="movie-card">
                 <div class="img-div">
-                    <a href="url-of-an-image"></a>
+                    <a href="" id="movie-info"><img src="images/doctor-who.jpg" alt=""></a>
                 </div>
-                <div class="details">
-                    <div class="title">
-    
-                    </div>
-                    <div class="rating">
-                        
-                    </div>
+                <div class="movie-info-container">
+                    <h2 class="f-s-mi" id="movie-title">Doctor Who</h2>
+                    <span class="date-release f-s-mi" id="date"> December 12, 2024</span>
+                    <span class="genre f-s-mi">Comedy - Scifi</span>
                 </div>
             </div>
-            
-            
+            <div class="movie-card">
+                <div class="img-div">
+                    <a href="" id="movie-info"><img src="images/doctor-who.jpg" alt=""></a>
+                </div>
+                <div class="movie-info-container">
+                    <h2 class="f-s-mi" id="movie-title">Doctor Who</h2>
+                    <span class="date-release f-s-mi" id="date"> December 12, 2024</span>
+                    <span class="genre f-s-mi">Comedy - Scifi</span>
+                </div>
+            </div>
         </div>
     </div>
+    
 </div>
 </body>
 </html>

@@ -27,9 +27,9 @@
                 <a href="" id="movie-info"><img src="images/doctor-who.jpg" alt=""></a>
             </div>
             <div class="movie-info-container">
-                <h2 class="f-s-mi" id="movie-title">Doctor Who</h2>
+                <h2 class="f-s-mi" id="movie-title"></h2>
                 <span class="date-release f-s-mi" id="date"> December 12, 2024</span>
-                <span class="genre f-s-mi">Comedy - Scifi</span>
+                <span class="genre f-s-mi"></span>
             </div>
         </div>
         <div class="movie-card">
@@ -37,49 +37,39 @@
                 <a href="" id="movie-info"><img src="images/doctor-who.jpg" alt=""></a>
             </div>
             <div class="movie-info-container">
-                <h2 class="f-s-mi" id="movie-title">Doctor Who</h2>
+                <h2 class="f-s-mi" id="movie-title"></h2>
                 <span class="date-release f-s-mi" id="date"> December 12, 2024</span>
-                <span class="genre f-s-mi">Comedy - Scifi</span>
+                <span class="genre f-s-mi"></span>
             </div>
         </div>
     </div>
     <div class="p-selection">
         <div class="genre-selection">
-            <div class="title">Select your Favourite Genre:</div>
+            <div class="title"><span>Genre:</span></div>
             <div class="genres">
                 <form action="post" id="select-genre">
-                    <input type="submit" class="i-s-style active" value="Action" id="action">
-                    <input type="submit" class="i-s-style" value="Horror" id="horror">
-                    <input type="submit" class="i-s-style" value="Comedy" id="comedy">
-                    <input type="submit" class="i-s-style" value="Drama" id="drama">
-                    <input type="submit" class="i-s-style" value="Fantasy" id="fantasy">
-                </form>
-            </div>
+                    <!-- Use a dropdown/select instead of individual input elements -->
+                    <select id="genre-dropdown" class="i-s-style">
+                      <!-- Options will be dynamically added here -->
+                    </select>
+                  </form>
+              </div>
         </div>
         <div class="selected-genre-movies">
             <div class="movie-card">
                 <div class="img-div">
-                    <a href="" id="movie-info"><img src="images/doctor-who.jpg" alt=""></a>
+                    <a href="" id="movie-info"><img src="images/doctor-who.jpg" alt="" id="movie-img"></a>
                 </div>
                 <div class="movie-info-container">
-                    <h2 class="f-s-mi" id="movie-title">Doctor Who</h2>
-                    <span class="date-release f-s-mi" id="date"> December 12, 2024</span>
-                    <span class="genre f-s-mi">Comedy - Scifi</span>
-                </div>
-            </div>
-            <div class="movie-card">
-                <div class="img-div">
-                    <a href="" id="movie-info"><img src="images/doctor-who.jpg" alt=""></a>
-                </div>
-                <div class="movie-info-container">
-                    <h2 class="f-s-mi" id="movie-title">Doctor Who</h2>
-                    <span class="date-release f-s-mi" id="date"> December 12, 2024</span>
-                    <span class="genre f-s-mi">Comedy - Scifi</span>
+                    <h2 class="f-s-mi" id="movie-title"></h2>
+                    <span class="date-release f-s-mi" id="movie-release-date"></span>
+                    <span class="genre f-s-mi" id="movie-genre"></span>
                 </div>
             </div>
         </div>
     </div>
-    
 </div>
+
+<script src="selectGenre.js"></script>
 </body>
 </html>

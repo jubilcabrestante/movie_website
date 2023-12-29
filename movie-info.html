@@ -4,8 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles2.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </head>
 <body>
-    
+    <div class="p_cont">
+        <div class="container">
+            <div class="movie-image">
+                <img src="images/doctor-who.jpg" alt="" id="movie-image">
+            </div>
+            <div class="movie-details">
+                <div class="movie-title" id="movie-title">
+                </div>
+                <div class="movie-grid pad" id="movie-g-rd">
+                    <div class="movie-genre" id="movie-genre">
+                    </div>
+                    <div class="release-date" id="release-date"></div>
+                    <div class="origin-country" id="origin-country">
+                    </div>
+                </div>
+                <div class="vote-average movie-grid">Vote Average: <span class="y-t" id="vote-average"></span></div>
+                <div class="overview movie-grid">Overview: <span class="y-t" id="overview"></span></div>
+                <div class="dpa movie-grid pad">
+                    <div class="director"><span class="y-t">Director:</span> <span id="director"></span></div>
+                    <div class="producers"><span class="y-t">Producers:</span> <span id="producers"></span></div>
+                    <div class="cast"><span class="y-t">Cast:</span> <span id="cast"></span></div>
+                    
+                </div>
+                <div class="vcp movie-grid">
+                    <div class="vote-count">Votes: <span class="y-t" id="vote-count"></span></div>
+                    <div class="popularity">Popularity: <span class="y-t" id="popularity"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="fetchData.js"></script>
 </body>
 </html>
+
+
+<!--<div class="movie-container">
+    <div class="movie-card">
+        <div class="img-div">
+            <a href="url-of-an-image"></a>
+        </div>
+        <div class="details">
+            <div class="title">
+
+            </div>
+            <div class="rating">
+                
+            </div>
+        </div>
+    </div>
+</div>-->

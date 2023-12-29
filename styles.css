@@ -2,6 +2,12 @@
 *{
     box-sizing: border-box;
 }
+@media screen and (max-width: 768px) {
+    .p_cont {
+        width: 100%;
+    }
+
+}
 
 html{
     margin:0;
@@ -14,16 +20,15 @@ body {
     padding: 0;
     font-family: "Ubuntu", sans-serif;
     height: 100vh;
-    margin: 0;
     display: flex;
+    align-items: start;
+    justify-content: center;
 }
 .p_cont{
     margin: 60px;
     width: 100%;
     height: auto;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
+
 }
 
 .header {
@@ -46,7 +51,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center calc(35% - 2px); 
-    opacity: 0.05;
+    opacity: 0.5;
     z-index: -1; /* Ensure the pseudo-element is rendered below other elements */
 }
 
@@ -72,7 +77,7 @@ body {
 
 
 form#form {
-    border: 1px solid rgb(36, 40, 50);
+    border: none;
     border-radius: 2rem;
     background-color: rgb(49, 49, 49);
     width: 100%;
@@ -91,6 +96,7 @@ form#form {
     padding-left: 25px;
     width: 100%;
     height: 100%;
+    color: rgb(209, 209, 209);
   }
 
   #search::placeholder{
@@ -120,28 +126,42 @@ form#form {
 .popular-movies{
     background-color:rgb(119, 154, 236) ;
 
-}.genre-selection {
-    flex-direction: column; /* Change to column layout */
-    background-color: rgb(36, 98, 77);
-    display: flex;
-    width: 100%;
-    height: 500px;
-    align-items: center;
-    justify-content: flex-start; 
-    padding-top: 40px;/* Align items at the top */
-}
-
-.genres {
-    display: flex;
-    width: 70%;
-    flex-wrap: wrap;
 }
 .title{
-    font-weight: 500;
+    color: rgb(235, 235, 235);
+    font-size: 25px;
     font-family: "Poppins", sans-serif;
     margin-bottom: 20px;
 }
 
+
+
+.p-selection{
+    width: 100%;
+    height: auto;
+    background-color: azure;
+    display: flex;
+flex-wrap: wrap;
+}
+
+.genre-selection {
+    flex-direction: column; /* Change to column layout */
+    background-color: rgb(36, 98, 77);
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: flex-start; 
+    margin-top: 40px;/* Align items at the top */
+}
+
+.genres {
+    width: 30rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    
+}
 form#select-genre {
     width: 100%;
     display: flex;
@@ -151,15 +171,6 @@ form#select-genre {
     justify-content: space-evenly;/* Align items at the top */
 }
 
-.movies-container, .popular-movies {
-    display: flex;
-    flex-direction: column; /* Align children in a column */
-    align-items: center;
-    justify-content: flex-start; /* Align items at the top */
-    width: 100%;
-    flex-wrap: wrap;
-}
-
 .i-s-style {
     color: rgb(203, 203, 65);
     background-color: transparent;
@@ -167,7 +178,6 @@ form#select-genre {
     width: 4.3rem;
     height: 2rem;
     border-radius: 20px;
-    margin-bottom: 10px; /* Add some bottom margin to separate the button from the next element */
 }
 
 .i-s-style:hover {
@@ -175,14 +185,93 @@ form#select-genre {
     background-color: rgb(203, 203, 65);
 }
 
-.i-s-style:active {
-    background-color: #4CAF50;
-    color: white;
+.i-s-style:active, .active {
+    border: none;
+    background-color: rgb(203, 203, 65);
+    color: black;
+}
+.selected-genre-movies{
+    padding-top: 20px;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: aqua;
 }
 
+.movies-container, .popular-movies {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Align items at the top */
+    width: 100%;
+    flex-wrap: wrap;
+}
 .movie-card {
-    background-color: aquamarine;
-    height: 250px;
-    width: 160px;
+    position: relative;
+    background-color: rgb(96, 96, 96);
+    border-radius: 5px;
+    height: 350px;
+    width: 250px;
     margin: 3rem;
+    overflow: hidden;
+}
+
+
+
+.img-div {
+    position: relative;
+    display: flex;
+    align-items: start;
+    align-content: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.f-s-mi {
+    margin: 0;
+    padding: 0;
+    color: white;
+    padding-left: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.7rem;
+    color: rgb(209, 209, 209);
+}
+
+.movie-info-container {
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    height: 34px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    align-items: flex-start;
+    align-content: center;
+    transition: bottom 0.2s ease-in;
+}
+.movie-card:hover .movie-info-container{
+    transform: translateY(-50px);
+}
+
+.movie-card:hover img {
+    transform: translateY(-80px);
+}
+
+.movie-card:hover .movie-info-container {
+    bottom: 0;
+}
+#movie-title{
+    margin-bottom: 3px;
+    font-size: 1rem;
+    color: rgb(215, 186, 102);
+    font-weight: 900;
 }

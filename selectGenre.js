@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       movieContainer.innerHTML = ""; // Clear previous content
   
       // Limit the number of movies to display to a maximum of 12
-      const moviesToDisplay = movies.slice(0, 12);
+      const moviesToDisplay = movies.slice(0, 16);
   
       moviesToDisplay.forEach(movie => {
         const movieCard = document.createElement("div");

@@ -4,10 +4,36 @@
 }
 @media screen and (max-width: 768px) {
     .p_cont {
-        width: 100%;
+        width: 100% !important;
     }
 
+    .movie-card {
+        height: 420px !important;
+        width: 295px !important;
+    }
+    .movie-info-container {
+
+        position: absolute;
+        bottom: -20px;
+        width: 100%;
+        height: 10px;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        align-items: flex-start;
+        align-content: start;
+        transition: bottom 0.2s ease-in;
+    }
+    .movie-card:hover .movie-info-container{
+        transform: translateY(-10px);
+    }
+
+    .movie-card:hover img {
+        transform: translateY(-110px);
+    }
 }
+
 
 html{
     margin:0;
@@ -123,10 +149,7 @@ form#form {
     filter: brightness(50%);
 }
 
-.popular-movies{
-    background-color:rgb(119, 154, 236) ;
 
-}
 .title{
     color: rgb(235, 235, 235);
     font-size: 25px;
@@ -139,37 +162,41 @@ form#form {
 .p-selection{
     width: 100%;
     height: auto;
-    background-color: azure;
     display: flex;
-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 .genre-selection {
-    flex-direction: column; /* Change to column layout */
-    background-color: rgb(36, 98, 77);
-    display: flex;
+    height: 100%;
     width: 100%;
-    height: auto;
-    align-items: center;
-    justify-content: flex-start; 
-    margin-top: 40px;/* Align items at the top */
+    display: flex;
+    flex-direction: row; /* Set flex-direction to column */
+    justify-content: center;
+    align-items: start;
+    align-content: center;
+    background-color: transparent;
 }
 
-.genres {
-    width: 30rem;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    
+.title {
+    width: 100%;
+    font-size: 1.3em;
+
 }
 form#select-genre {
-    width: 100%;
+    margin-left: 20px;
     display: flex;
-    flex-direction: row; /* Align children in a column */
-    align-items:center;
-    align-content: center;
-    justify-content: space-evenly;/* Align items at the top */
+    align-items: center;
 }
+
+#genre-dropdown {
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: center; /* Center the text horizontally */
+    margin: 0 auto;
+}
+
+
 
 .i-s-style {
     color: rgb(203, 203, 65);
@@ -185,11 +212,13 @@ form#select-genre {
     background-color: rgb(203, 203, 65);
 }
 
-.i-s-style:active, .active {
+.i-s-style:active,
+.active {
     border: none;
     background-color: rgb(203, 203, 65);
     color: black;
 }
+
 .selected-genre-movies{
     padding-top: 20px;
     flex-wrap: wrap;
@@ -197,7 +226,6 @@ form#select-genre {
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: aqua;
 }
 
 .movies-container, .popular-movies {
@@ -209,13 +237,15 @@ form#select-genre {
 }
 .movie-card {
     position: relative;
-    background-color: rgb(96, 96, 96);
+    background-color: rgba(94, 94, 94, 0.1);
     border-radius: 5px;
-    height: 350px;
-    width: 250px;
+    height: auto;
+    width: 300px;
     margin: 3rem;
     overflow: hidden;
+    box-shadow: 0 4px 8px rgba(94, 94, 94, 0.1);
 }
+
 
 
 
@@ -246,10 +276,11 @@ img {
 }
 
 .movie-info-container {
+    justify-content: center;
     position: absolute;
-    bottom: -30px;
+    bottom: -80px;
     width: 100%;
-    height: 34px;
+    height: auto;
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -263,7 +294,7 @@ img {
 }
 
 .movie-card:hover img {
-    transform: translateY(-80px);
+    transform: translateY(-110px);
 }
 
 .movie-card:hover .movie-info-container {

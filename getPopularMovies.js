@@ -1,11 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Declare movieId as a global variable
-  function getMovieIdFromUrl() {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('movieId');
-  }
-
-    let movieId = getMovieIdFromUrl();
 
   // API key and endpoints
   const apiKey = "1bfdbff05c2698dc917dd28c08d41096";

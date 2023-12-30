@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="mi-styles.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </head>
@@ -15,14 +15,12 @@
                 <img src="" alt="" id="movie-image">
             </div>            
             <div class="movie-details">
-                <div class="movie-title" id="movie-title">
+                <div class="movie-title" style="font-size:1.8rem;" id="movie-title">
                 </div>
                 <div class="movie-grid pad" id="movie-g-rd">
-                    <div class="movie-genre" id="movie-genre">
-                    </div>
+                    <div class="movie-genre" id="movie-genre"></div>
                     <div class="release-date" id="release-date"></div>
-                    <div class="origin-country" id="origin-country">
-                    </div>
+                    <div class="origin-country" id="origin-country"></div>
                 </div>
                 <div class="vote-average movie-grid">Vote Average: <span class="y-t" id="vote-average"></span></div>
                 <div class="overview movie-grid">Overview: <span class="y-t" id="overview"></span></div>
@@ -38,13 +36,14 @@
                 </div>
             </div>
         </div>
+        <div class="title" id="sm">Similar Movies</div>
         <div class="similar-movies" id="similar-movies-container">
             <div class="movie-card">
                 <!-- ... (similar movie card structure) ... -->
             </div>
         </div>
         <script src="fetchData.js"></script>
-        <script src="displaySimilarMovies.js"></script>
+        <script src="getSimilarMovies.js"></script>
       
 </body>
 </html>

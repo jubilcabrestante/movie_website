@@ -92,9 +92,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Log the movieId value to check if it's set correctly
       console.log("Clicked Movie ID:", movieId);
-
-      // Redirect to movie-info.html with the movie ID as a query parameter
-      window.location.href = `movie-info.html?movieId=${movieId}`;
   }
 
   // Handle movie card double-click event

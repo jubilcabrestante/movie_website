@@ -1,9 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let movieId;  // Declare movieId as a global variable
+  // Declare movieId as a global variable
+  function getMovieIdFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('movieId');
+  }
 
+    let movieId = getMovieIdFromUrl();
+
+  // API key and endpoints
   const apiKey = "1bfdbff05c2698dc917dd28c08d41096";
   const popularMoviesEndpoint = "https://api.themoviedb.org/3/movie/popular";
-  const movieDetailsEndpoint = "https://api.themoviedb.org/3/movie"; // New endpoint for movie details
+  const movieDetailsEndpoint = "https://api.themoviedb.org/3/movie";
 
   // Fetch popular movies
   fetch(`${popularMoviesEndpoint}?api_key=${apiKey}&language=en-US&page=1`)
@@ -12,14 +19,19 @@ document.addEventListener("DOMContentLoaded", function () {
       // Get an array of movie IDs
       const movieIds = data.results.map(movie => movie.id);
 
-      // Display popular movies in the UI
-      displayPopularMovies(data.results);
+      // Fetch detailed information for each popular movie
+      const promises = movieIds.map(movieId => fetch(`${movieDetailsEndpoint}/${movieId}?api_key=${apiKey}&language=en-US`));
+      return Promise.all(promises)
+        .then(responses => Promise.all(responses.map(response => response.json())))
+        .then(detailedMovies => {
+          displayPopularMovies(detailedMovies);
 
-      // Add click event listeners to movie cards
-      const movieCards = document.querySelectorAll(".movie-card");
-      movieCards.forEach(card => {
-        card.addEventListener("click", () => handleMovieCardClick(card.dataset.movieId));
-      });
+          // Add double click event listeners to movie cards
+          const movieCards = document.querySelectorAll(".movie-card");
+          movieCards.forEach(card => {
+            card.addEventListener("dblclick", () => handleMovieCardDoubleClick(card.dataset.movieId));
+          });
+        });
     })
     .catch(error => console.error("Error fetching popular movies:", error));
 
@@ -86,36 +98,37 @@ document.addEventListener("DOMContentLoaded", function () {
     return movieCard;
   }
 
-  // Handle movie card click event
-  function handleMovieCardClick(clickedMovieId) {
-    // Set the movieId value based on the clicked movie card
-    movieId = clickedMovieId;
-
-    // Log the movieId value to check if it's set correctly
-    console.log("Clicked Movie ID:", movieId);
-
-    // Call the function to display similar movies
-    displaySimilarMovies(movieId);
-  }
-
-  // Function to fetch and display similar movies
-  function displaySimilarMovies(movieId) {
-    const similarMoviesEndpoint = `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${apiKey}&language=en-US&page=1`;
-
-    fetch(similarMoviesEndpoint)
-      .then(response => response.json())
-      .then(data => {
-        // Display similar movies in the UI
-        const similarMoviesContainer = document.querySelector(".similar-movies");
-        similarMoviesContainer.innerHTML = ""; // Clear previous content
-
-        const similarMoviesToDisplay = data.results.slice(0, 4);
-
-        similarMoviesToDisplay.forEach(similarMovie => {
-          const similarMovieCard = createMovieCard(similarMovie);
-          similarMoviesContainer.appendChild(similarMovieCard);
-        });
-      })
-      .catch(error => console.error("Error fetching similar movies:", error));
-  }
+     // Handle movie card click event
+     function handleMovieCardClick(clickedMovieId) {
+      // Set the movieId value based on the clicked movie card
+      movieId = clickedMovieId;
+  
+      // Log the movieId value to check if it's set correctly
+      console.log("Clicked Movie ID:", movieId);
+  
+      // Call the fetchData function to retrieve movie details using the extracted movieId
+      fetchData(movieId);
+    }
+  
+    // Handle movie card double-click event
+    function handleMovieCardDoubleClick(clickedMovieId) {
+      // Redirect to movie-info.html with the movieID of the clicked similar movie
+      window.location.href = `movie-info.html?movieId=${clickedMovieId}`;
+    }
+  
+    // Function to fetch detailed information for a movie
+    async function fetchData(movieId) {
+      try {
+        // Fetch detailed information for the selected movie
+        const response = await fetch(`${movieDetailsEndpoint}/${movieId}?api_key=${apiKey}&language=en-US`);
+        const detailedMovie = await response.json();
+  
+        // Log the detailed movie information
+        console.log("Detailed Movie Information:", detailedMovie);
+  
+        // You can now use the detailedMovie data to update the UI or perform other actions
+      } catch (error) {
+        console.error("Error fetching detailed movie information:", error);
+      }
+    }
 });

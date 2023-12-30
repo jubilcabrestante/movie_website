@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       genre.id = "movie-genre";
-
+      
       imgDiv.appendChild(img);
       movieInfoContainer.appendChild(title);
       movieInfoContainer.appendChild(releaseDate);

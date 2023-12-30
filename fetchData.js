@@ -1,17 +1,34 @@
-let movieId;
+// fetchData.js
 
+// Function to extract the movie ID from the URL
+function getMovieIdFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('movieId');
+}
+
+// Function to fetch movie data
 async function fetchData() {
+    // Get the movie ID from the URL
+    const movieId = getMovieIdFromUrl();
+
+    // If there's no movieId in the URL, do nothing
+    if (!movieId) {
+        console.error('No movieId found in the URL');
+        return;
+    }
+
     const apiKey = '1bfdbff05c2698dc917dd28c08d41096';
     const apiUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en`;
     const creditsUrl = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${apiKey}`;
 
     try {
         // Use Axios to make the request for movie details
-        const movieResponse = await axios.get(apiUrl);
-        const movieData = movieResponse.data;
+        const [movieResponse, creditsResponse] = await Promise.all([
+            axios.get(apiUrl),
+            axios.get(creditsUrl)
+        ]);
 
-        // Use Axios to make the request for movie credits
-        const creditsResponse = await axios.get(creditsUrl);
+        const movieData = movieResponse.data;
         const creditsData = creditsResponse.data;
 
         // Populate HTML elements with movie details
@@ -44,8 +61,5 @@ async function fetchData() {
     }
 }
 
-// Set the movieId value
-movieId = 24428;
-
-// Call the fetchData function
+// Call the fetchData function to retrieve movie details using the extracted movie ID
 fetchData();

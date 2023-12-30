@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,29 +8,20 @@
 </head>
 <body>
 <div class="p_cont">
-        <div class="header">
-            <div class="text-header"><h1>JC Movie Search</h1></div>
-            <div class="side_nav">        
-                <form class="user-form" id="form">
-                    <input type="text" id="search" placeholder="Search for upcoming movies">
-                    <button class="button-inside"></button>
-                </form>
-            </div>
+    <div class="header">
+        <div class="text-header"><h1>JC Movie Search</h1></div>
+        <div class="side_nav">        
+            <form class="user-form" id="form">
+                <input type="text" id="search" placeholder="Search for upcoming movies">
+                <button class="button-inside"></button>
+            </form>
         </div>
+    </div>
     <div class="h1-pm">
         <h1 class="title">Popular Movies</h1>
     </div>
-    <div class="popular-movies">
-        <div class="movie-card">
-            <div class="img-div">
-                <a href="" id="movie-info"><img src="images/doctor-who.jpg" alt=""></a>
-            </div>
-            <div class="movie-info-container">
-                <h2 class="f-s-mi" id="movie-title"></h2>
-                <span class="date-release f-s-mi" id="date"> December 12, 2024</span>
-                <span class="genre f-s-mi"></span>
-            </div>
-        </div>
+    <div class="popular-movies" id="popular-movies-container">
+        <!-- Movie cards will be dynamically added here -->
     </div>
     <div class="p-selection">
         <div class="genre-selection">
@@ -42,8 +32,8 @@
                     <select id="genre-dropdown" class="i-s-style">
                       <!-- Options will be dynamically added here -->
                     </select>
-                  </form>
-              </div>
+                </form>
+            </div>
         </div>
         <div class="selected-genre-movies" id="selected-genre-movies">
             <div class="movie-card">
@@ -62,5 +52,7 @@
 
 <script src="selectGenre.js"></script>
 <script src="getPopularMovies.js"></script>
+<script src="displaySimilarMovies.js"></script>
+<script src="handlesDoubleClick.js"></script>
 </body>
 </html>

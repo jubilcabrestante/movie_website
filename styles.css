@@ -306,3 +306,11 @@ img {
     color: rgb(215, 186, 102);
     font-weight: 900;
 }
+
+#movie-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}

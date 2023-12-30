@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+
   const apiKey = "1bfdbff05c2698dc917dd28c08d41096";
   const discoverEndpoint = "https://api.themoviedb.org/3/discover/movie";
   const genreListEndpoint = "https://api.themoviedb.org/3/genre/movie/list";
@@ -34,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function fetchMoviesByGenre(genreId, movieId) {
+  function fetchMoviesByGenre(genreId) {
     fetch(`${discoverEndpoint}?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${genreId}`)
       .then(response => response.json())
       .then(data => {

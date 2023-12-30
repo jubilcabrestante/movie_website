@@ -4,29 +4,19 @@
 }
 @media screen and (max-width: 600px) {
     .p_cont {
-        width: 90% !important;
+        width: 100% !important;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
     }
     .movie-details{
+        padding: 1.5rem!important;
         display: flex;
         flex-direction: column;
         width: 100% !important; 
         height: auto;
     }
-    
-    .movie-image{
-        display: flex;
-        height: auto;
-        width: auto;
-        background-color: rgb(90, 90, 90);
-    }
-    .movie-image img{
-        width:  100%!important;
-    };
-    
 }
 
 html{
@@ -50,35 +40,47 @@ body {
     height: auto;
     margin-top: 2%;
 }
-
-.container{
+.container {
     display: flex;
     flex-wrap: wrap;
-    align-content: center;
     justify-content: center;
-    align-items: center;
     width: 100%;
-    height: auto;
-}
-.movie-image{
-    display: flex;
-    height: 38.75rem;
-    width: auto;
+    height: 36rem; /* Set a specific height for the container */
 }
 
-.pad{
-    padding:1%
+.movie-image {
+    display: flex;
+    height: inherit; /* Inherits the height from the parent container */
+    width: 33rem;
+    align-items: start;
+    align-content: start;
+    justify-content: center;
+    align-self: flex-start;
 }
-.movie-details{
-    padding:20px 40px;
+
+.movie-image > img {
+    display: flex;
+    height: 100%;
+    width: auto;
+    margin: 0;
+}
+
+.pad {
+    padding: 1%;
+}
+
+.movie-details {
+
+    padding: 20px 40px;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-content: center;
     align-items: start;
-    width: 720px;
-    height: 620px;
+    width: 32rem;
+    height: 100%; /* Make the height 100% to match the container height */
 }
+
 .movie-title {
     font-family: "Poppins",sans-serif;
     font-weight: 700;
@@ -123,4 +125,84 @@ body {
     box-sizing: border-box; /* Include padding and border in the width calculation */
     text-align: start;
     margin: 5px; /* Add margin for spacing between items */
+}
+
+
+.movies-container, .popular-movies {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Align items at the top */
+    width: 100%;
+    flex-wrap: wrap;
+}
+.movie-card {
+    position: relative;
+    background-color: rgba(94, 94, 94, 0.1);
+    border-radius: 5px;
+    height: auto;
+    width: 300px;
+    margin: 3rem;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(94, 94, 94, 0.1);
+}
+
+
+
+
+.img-div {
+    position: relative;
+    display: flex;
+    align-items: start;
+    align-content: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.f-s-mi {
+    margin: 0;
+    padding: 0;
+    color: white;
+    padding-left: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.7rem;
+    color: rgb(209, 209, 209);
+}
+
+.movie-info-container {
+    justify-content: center;
+    position: absolute;
+    bottom: -80px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    align-items: flex-start;
+    align-content: center;
+    transition: bottom 0.2s ease-in;
+}
+.movie-card:hover .movie-info-container{
+    transform: translateY(-50px);
+}
+
+.movie-card:hover img {
+    transform: translateY(-110px);
+}
+
+.movie-card:hover .movie-info-container {
+    bottom: 0;
+}
+#movie-title{
+    margin-bottom: 3px;
+    font-size: 1rem;
+    color: rgb(215, 186, 102);
+    font-weight: 900;
 }

@@ -11,17 +11,21 @@
     <div class="header">
         <div class="text-header"><h1>JC Movie Search</h1></div>
         <div class="side_nav">        
-            <form class="user-form" id="form">
-                <input type="text" id="search" placeholder="Search for upcoming movies">
-                <button class="button-inside"></button>
+            <form method="get" class="user-form" id="form">
+                <input type="text" id="search" name="search" placeholder="Search for upcoming movies">
+                <button type="submit" class="button-inside"></button>
             </form>
         </div>
+    </div>
+    <div class="main-content" id="movie-list">
+
     </div>
     <div class="h1-pm">
         <h1 class="title">Popular Movies</h1>
     </div>
     <div class="popular-movies" id="popular-movies-container">
-        <!-- Movie cards will be dynamically added here -->
+        <div class="movie-card">
+        </div>
     </div>
     <div class="p-selection">
         <div class="genre-selection">
@@ -50,9 +54,11 @@
     </div>
 </div>
 
+<script src="searchMovieByName.js"></script>
 <script src="selectGenre.js"></script>
 <script src="getPopularMovies.js"></script>
-<script src="displaySimilarMovies.js"></script>
-<script src="handlesDoubleClick.js"></script>
+<script>
+    
+</script>
 </body>
 </html>

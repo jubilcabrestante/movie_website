@@ -4,67 +4,15 @@
 }
 @media screen and (max-width: 1200px) {
     .p_cont {
-        width: 100%;
-        max-width: none; /* Allow the container to expand to full width */
+        width: 100% !important;
     }
-
-    .movie-card {
-        position: relative; /* Set the position to relative */
-        height: auto; /* Allow the height to adjust based on content */
-        width: 100%; /* Fill the width of the container */
-        max-width: none; /* Allow the card to expand to full width */
-    }
-
-    .movie-info-container {
-        position: absolute;
-        bottom: -40px; /* Adjust the position to stay below the movie card */
-        width: 100%;
-        padding: 0 10px;
-        box-sizing: border-box; /* Include padding in width calculation */
-        transition: transform 0.2s ease-in; /* Apply transform on hover */
-        transform: translateY(100%); /* Initially move the container out of view */
-    }
-
-    .movie-card:hover .movie-info-container {
-        transform: translateY(0px); /* Move the container into view on hover */
-    }
-
-    .movie-card:hover img {
-        transform: translateY(-20px); /* Adjust image position on hover */
-    }
+    
 }
 @media screen and (max-width: 768px) {
     .p_cont {
         width: 100% !important;
-        max-width: none; /* Allow the container to expand to full width */
     }
 
-    .movie-card {
-        position: relative !important; /* Set the position to relative */
-        height: auto; /* Allow the height to adjust based on content */
-        width: 100% ; /* Fill the width of the container */
-        max-width: none; /* Allow the card to expand to full width */
-    }
-
-    .movie-info-container {
-        position: absolute;
-        align-items: start;
-        align-content: start;
-        bottom: 0;
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box; /* Include padding in width calculation */
-        transition: transform 0.2s ease-in; /* Apply transform on hover */
-        transform: translateY(100%); /* Initially move the container out of view */
-    }
-
-    .movie-card:hover .movie-info-container {
-        transform: translateY(-35px) !important; /* Move the container into view on hover */
-    }
-
-    .movie-card:hover img {
-        transform: translateY(-120px) !important; /* Adjust image position on hover */
-    }
 }
 
 
@@ -88,6 +36,7 @@ body {
     margin: 60px;
     width: 100%;
     height: auto;
+    padding-bottom: 1rem;
 
 }
 
@@ -120,7 +69,7 @@ body {
     margin-left: 2em;
     width: auto;
     align-content: flex-start;
-    color: rgb(232, 232, 232);
+    color: rgb(215, 186, 102);
     font-family: "Poppins", sans-serif;
 }
 .side_nav{
@@ -195,14 +144,17 @@ form#form {
 
 
 .title{
-    color: rgb(235, 235, 235);
-    font-size: 25px;
+    color:rgb(215, 186, 102);
+    padding-left: 20px;
+    width: auto;
+    font-size: 1.6em;
     font-family: "Poppins", sans-serif;
 }
 
 
 
 .p-selection{
+    margin-top: 4rem;
     width: 100%;
     height: auto;
     display: flex;
@@ -220,12 +172,6 @@ form#form {
     background-color: transparent;
 }
 
-.title {
-    padding-left: 20px;
-    width: auto;
-    font-size: 1.3em;
-
-}
 form#select-genre {
     margin-left: 20px;
     display: flex;
@@ -273,24 +219,6 @@ form#select-genre {
     width: 100%;
 }
 
-.movies-container, .popular-movies {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Align items at the top */
-    width: 100%;
-    flex-wrap: wrap;
-}
-.movie-card {
-    position: relative;
-    background-color: rgba(94, 94, 94, 0.1);
-    border-radius: 5px;
-    height: auto;
-    width: 300px;
-    margin: 1rem;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(94, 94, 94, 0.1);
-}
-
 
 .img-div {
     position: relative;
@@ -317,27 +245,43 @@ img {
     font-size: 0.7rem;
     color: rgb(209, 209, 209);
 }
-
+.movies-container, .popular-movies {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Align items at the top */
+    width: 100%;
+    flex-wrap: wrap;
+}
+.movie-card {
+    position: relative;
+    background-color: rgba(94, 94, 94, 0.1);
+    border-radius: 5px;
+    height: auto;
+    width: 300px;
+    margin: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(94, 94, 94, 0.1);
+}
 .movie-info-container {
-    justify-content: center;
+    height: 150px;
     position: absolute;
     bottom: -80px;
     width: 100%;
-    height: auto;
     display: flex;
     flex-direction: column;
-    padding: 0;
-    margin: 0;
-    align-items: flex-start;
-    align-content: center;
+    align-items: start;
+    align-content: start;
+    justify-content: start;
     transition: bottom 0.2s ease-in;
+    transform: translateY(100%);
 }
 .movie-card:hover .movie-info-container{
-    transform: translateY(-50px);
+    transform: translateY(45px);
 }
 
 .movie-card:hover img {
-    transform: translateY(-110px);
+    cursor: pointer;
+    transform: translateY(-120px);
 }
 
 .movie-card:hover .movie-info-container {
@@ -356,4 +300,115 @@ img {
     justify-content: space-evenly;
     align-items: center;
     align-content: center;
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: auto; /* Set a specific height for the container */
+    box-shadow: 
+    5px 5px 10px #888888,
+    -5px -5px 10px #888888;
+}
+
+
+.movie-image {
+    display: flex;
+    height: inherit; /* Inherits the height from the parent container */
+    width: 33rem;
+    align-items: start;
+    align-content: start;
+    justify-content: center;
+    align-self: flex-start;
+}
+
+.movie-image > img {
+    display: flex;
+    height: 100%;
+    width: auto;
+    margin: 0;
+}
+
+.pad {
+    padding: 1%;
+}
+
+.movie-details {
+
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-content: center;
+    align-items: start;
+    width: 32rem;
+    height: 100%; /* Make the height 100% to match the container height */
+}
+
+#vote-average{
+    text-indent: 8px;
+}
+#overview {
+    text-indent: 40px;
+    text-align: justify;
+}
+.pad{
+    padding:  15px 2px;
+}
+.movie-grid {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    flex-wrap: wrap; /* Keep items in a single line; no wrapping */
+
+}
+
+.y-t{
+    color: rgb(215, 186, 114);
+}
+
+.movie-details > .movie-title,
+.movie-genre,
+.release-date,
+.origin-country,
+.vote-average,
+.overview,
+.director,
+.producers,
+.cast,
+.vote-count,
+.popularity{
+    color: white;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    text-align: start;
+    margin: 5px; /* Add margin for spacing between items */
+}
+
+
+
+.similar-movies{    
+    padding-top: 20px;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#sm{
+    display: flex;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    width: 100%;
+    height: auto;
+    justify-content: start;
+    align-items: start;
+    align-content: center;
+    font-size: 1.8rem;
+    padding: 3% 9% 1% 9%;
 }

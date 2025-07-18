@@ -1,60 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-<body>
-<div class="p_cont">
-    <div class="header">
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="p_cont">
+      <div
+        class="header"
+        style="
+          background-image: url('./assets/bg1.png');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          opacity: 0.5;
+        "
+      >
         <div class="text-header"><h1>JC Movie Search</h1></div>
-        <div class="side_nav">        
-            <form method="get" class="user-form" id="form">
-                <input type="text" id="search" name="search" placeholder="Search for upcoming movies">
-                <button type="submit" class="button-inside"></button>
-            </form>
+        <div class="side_nav">
+          <form method="get" class="user-form" id="form">
+            <input
+              type="text"
+              id="search"
+              name="search"
+              placeholder="Search for upcoming movies"
+            />
+            <button type="submit" class="button-inside"></button>
+          </form>
         </div>
-    </div>
-    <div class="main-content" id="movie-list">
-
-    </div>
-    <div class="h1-pm">
+      </div>
+      <div class="main-content" id="movie-list"></div>
+      <div class="h1-pm">
         <h1 class="title">Popular Movies</h1>
-    </div>
-    <div class="popular-movies" id="popular-movies-container">
-        <div class="movie-card">
-        </div>
-    </div>
-    <div class="p-selection">
+      </div>
+      <div class="popular-movies" id="popular-movies-container">
+        <div class="movie-card"></div>
+      </div>
+      <div class="p-selection">
         <div class="genre-selection">
-            <div class="title"><span>Genre:</span></div>
-            <div class="genres">
-                <form action="post" id="select-genre">
-                    <select id="genre-dropdown" class="i-s-style">
-                    </select>
-                </form>
-            </div>
+          <div class="title"><span>Genre:</span></div>
+          <div class="genres">
+            <form action="post" id="select-genre">
+              <select id="genre-dropdown" class="i-s-style"></select>
+            </form>
+          </div>
         </div>
         <div class="selected-genre-movies" id="selected-genre-movies">
-            <div class="movie-card">
-                <div class="img-div">
-                    <a href="" id="movie-info"><img src="" alt="" id="movie-img"></a>
-                </div>
-                <div class="movie-info-container">
-                    <h2 class="f-s-mi" id="movie-title"></h2>
-                    <span class="date-release f-s-mi" id="movie-release-date"></span>
-                    <span class="genre f-s-mi" id="movie-genre"></span>
-                </div>
+          <div class="movie-card">
+            <div class="img-div">
+              <a href="" id="movie-info"
+                ><img src="" alt="" id="movie-img"
+              /></a>
             </div>
+            <div class="movie-info-container">
+              <h2 class="f-s-mi" id="movie-title"></h2>
+              <span class="date-release f-s-mi" id="movie-release-date"></span>
+              <span class="genre f-s-mi" id="movie-genre"></span>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-<script src="./scripts/searchMovieByName.js"></script>
-<script src="./scripts/selectGenre.js"></script>
-<script src="./scripts/getPopularMovies.js"></script>
-
-</body>
+    <script src="./scripts/searchMovieByName.js"></script>
+    <script src="./scripts/selectGenre.js"></script>
+    <script src="./scripts/getPopularMovies.js"></script>
+  </body>
 </html>
